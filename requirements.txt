@@ -1,0 +1,13 @@
+dj-database-url==0.4.1
+dj-static==0.0.6
+Django==1.9.9
+django-geoposition==0.3.0
+django-toolbelt==0.0.1
+djangorestframework==3.3.3
+gunicorn==19.6.0
+psycopg2==2.6.2
+static3==0.7.0
+whitenoise==3.2.1
+django-braces==1.9.0
+django-model-utils==2.5.2
+django-star-ratings==0.5.3

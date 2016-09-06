@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+<h4>Applicant Listings:</h4>
+
+{% for object in object_list %}
+<br>
+<p>********************</p>
+<p>Applicants name: {{ object.applicant_name }}</p>
+<p>Applicants Email: {{ object.applicant_email }}</p>
+<p>Applicants Phone: {{ object.applicant_phone }}</p>
+<p>Applicants Position applying for: {{ object.position_applying_for }}</p>
+<p>Date of application: {{ object.date_applying }}</p>
+<p>CV or Resume: {{ object.post_resume_or_cover }}</p>
+
+
+
+<p>********************</p>
+
+{% endfor %}
+</div>
+{% endblock %}

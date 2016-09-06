@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>People we know</title>
+        <style>
+            #map-canvas {
+                height: 600px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>People we know</h1>
+
+        <dl>
+            {% for pwk in pwks %}
+                <dt>{{ pwk.name }}</dt>
+                <dd>{{ pwk.position }}</dd>
+            {% endfor %}
+        </dl>
+
+        <div id="map-canvas"></div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+        <script>
+            function initialize() {
+                var map = new google.maps.Map(document.getElementById('map-canvas'));
+                var bounds = new google.maps.LatLngBounds();
+                function addMarker(lat, lng, title) {
+                    var position = new google.maps.LatLng(lat, lng);
+                    var marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: title
+                    });
+                    bounds.extend(position);
+                }
+                {% for pwk in pwks %}
+                    addMarker({{ pwk.position.latitude }}, {{ pwk.position.longitude }}, "{{ pwk.name }}");
+                {% endfor %}
+                map.fitBounds(bounds);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2aoLW7K1XIfoqnKOTHoE4GDK7-ZfCrQE&libraries=places&&callback=initAutocomplete"
+             async defer></script>
+             <html>
+</html>
