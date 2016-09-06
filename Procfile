@@ -1,1 +1,1 @@
-web: gunicorn google_map_app.wsgi --log-file -
+web: gunicorn tipply.wsgi --log-file -
