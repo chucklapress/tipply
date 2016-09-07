@@ -6,7 +6,7 @@ Project information
 
 of Hospitality employees.
 
-non logged in users can utilize a map by location name to locate an employee_create_view
+non logged in users can utilize a map by location name to locate an employer 
 fill out an application for employment.
 
 logged in user can check for current applicants, evaluate employee performance on a built set of metrics,
