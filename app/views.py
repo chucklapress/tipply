@@ -21,6 +21,9 @@ from geoposition.forms import GeopositionField
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+class BusinessMapView(TemplateView):
+    template_name = 'findus.html'
+
 class LoginView(View):
     def post(self, request):
         username = request.POST['username']

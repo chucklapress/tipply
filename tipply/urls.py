@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import login, logout
-from app.views import IndexView,SignUpView,LoginView,LogoutView,EmployeeListingCreateView,ApplicantListView, EmployeeListView, EmployeeWorkSkillCreateView, EmployeeCreateView, user_create_view,poi_list,pwk_list, BookView
+from app.views import IndexView,SignUpView,LoginView,LogoutView,EmployeeListingCreateView,ApplicantListView, EmployeeListView, EmployeeWorkSkillCreateView, EmployeeCreateView, user_create_view,poi_list,pwk_list, BookView, BusinessMapView
 from tipplyapi.views import EmployeeListingListAPIView, EmployeeListingDetailAPIView
 from rest_framework.authtoken import views as authviews
 from app import views
@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^places$', views.poi_list),
     url(r'^people$', views.pwk_list),
     url(r'^book$',BookView.as_view(), name="book_view"),
+    url(r'^findus$',BusinessMapView.as_view(), name="business_map_view"),
     url(r'^employee_create/$',EmployeeCreateView.as_view(), name='employee_create_view'),
     url(r'^employee_listing_create/$',EmployeeListingCreateView.as_view(), name='employee_listing_create_view'),
     url(r'^applicant_list/$',ApplicantListView.as_view(), name='applicant_list_view'),
