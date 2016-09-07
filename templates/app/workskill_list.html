@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load ratings %}
 {% block content %}
 <div class="container">
 <h4>Employee ratings:</h4>
@@ -12,12 +12,17 @@ scale of (1) to (5)  (1) poor to (5) excellent
 <p>********************</p>
 <p>Employee name: {{ object.employee_name }}</p>
 <p>Employee appearence: {{ object.appearence }}</p>
+{% ratings object %}
 <p>Customer care skills: {{ object.customer_skills }}</p>
+{% ratings object %}
 <p>Teamwork : {{ object.team_work }}</p>
+{% ratings object %}
 <p>Follows company policies: {{ object.adhere_company_policies }}</p>
+{% ratings object %}
 <p>Is receptive to coaching: {{ object.accepts_coaching }}</p>
+{% ratings object %}
 <p>Keeps Busy / self starting: {{ object.self_starting }}</p>
-
+{% ratings object %}
 
 
 <p>********************</p>
