@@ -119,31 +119,23 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'Cache-Control': 'max-age=94608000',
     }
-aws_bucket_name = os.environ.get('aws_bucket_name')
-aws_access_key_id = os.environ['aws_access_key_id']
-aws_secret_access_key = os.environ['aws_secret_access_key']
+AWS_STORAGE_BUCKET_NAME = 'BUCKET_NAME'
+    AWS_ACCESS_KEY_ID = 'xxxxxxxxxxxxxxxxxxxx'
+    AWS_SECRET_ACCESS_KEY = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
 
-AWS_STORAGE_BUCKET_NAME = aws_bucket_name
-AWS_ACCESS_KEY_ID = aws_access_key_id
-AWS_SECRET_ACCESS_KEY = aws_secret_access_key
+    # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+    # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+    # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+    # We also use it in the next setting.
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(aws_bucket_name)
-if aws_bucket_name:
     # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
     # refers directly to STATIC_URL. So it's safest to always set it.
-    # STATIC_URL = 'https://{}/'.format(AWS_S3_CUSTOM_DOMAIN)
+    STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 
-    AWS_S3_FILE_OVERWRITE = False
     # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
     # you run `collectstatic`).
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-    # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
-    # DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-    STATICFILES_LOCATION = 'static'
-
 
 LANGUAGE_CODE = 'en-us'
 
