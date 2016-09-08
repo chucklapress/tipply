@@ -12,9 +12,6 @@ from django.http import HttpResponse
 from django import forms
 from geoposition.forms import GeopositionField
 
-
-
-
 # Create your views here.
 
 
