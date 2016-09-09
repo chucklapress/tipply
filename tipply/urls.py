@@ -46,4 +46,4 @@ urlpatterns = [
     url(r'^api/employee_listings/$', EmployeeListingListAPIView.as_view(), name="employee_listing_list_api_view"),
     url(r'^api/employee_listings/(?P<pk>\d+)/$', EmployeeListingDetailAPIView.as_view(), name="employee_listing_detail_api_view")
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
