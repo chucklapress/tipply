@@ -21,6 +21,7 @@ from app.views import IndexView,SignUpView,LoginView,LogoutView,EmployeeListingC
 from tipplyapi.views import EmployeeListingListAPIView, EmployeeListingDetailAPIView
 from rest_framework.authtoken import views as authviews
 from app import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -44,4 +45,4 @@ urlpatterns = [
     url(r'^api/employee_listings/$', EmployeeListingListAPIView.as_view(), name="employee_listing_list_api_view"),
     url(r'^api/employee_listings/(?P<pk>\d+)/$', EmployeeListingDetailAPIView.as_view(), name="employee_listing_detail_api_view")
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
