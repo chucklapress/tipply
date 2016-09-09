@@ -118,9 +118,9 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'Cache-Control': 'max-age=94608000',
     }
-aws_access_key = os.environ["aws_access_key"]
-aws_secret_key = os.environ["aws_secret_key"]
-aws_bucket = os.environ["aws_bucket"]
+aws_access_key = os.environ["aws_access_key_id"]
+aws_secret_key = os.environ["aws_secret_access_key"]
+aws_bucket = os.environ["s3_bucket_name"]
 
 
 S3_BUCKET_NAME = aws_bucket
