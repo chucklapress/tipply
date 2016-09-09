@@ -86,7 +86,7 @@ class EmployeeWorkSkillCreateView(CreateView):
 
 class EmployeeCreateView(CreateView):
     model = Employee
-    fields = ['employee_name','dob','address','telephone_number','federal_and_state_filling_status','department','start_date','recieved_employee_handbook','personel_notes']
+    fields = ['employee_name','dob','address','telephone_number','federal_and_state_filling_status','department','start_date','end_date','recieved_employee_handbook','personel_notes']
     success_url = '/'
 
 def poi_list(request):
