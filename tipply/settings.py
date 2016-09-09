@@ -118,11 +118,9 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'Cache-Control': 'max-age=94608000',
     }
-aws_access_key = os.environ["aws_access_key_id"]
-aws_secret_key = os.environ["aws_secret_access_key"]
-aws_bucket = os.environ["s3_bucket_name"]
 
 
+s3 = S3Client(os.environ['AWS_ACCESS_KEY_ID'], os.environ['AWS_SECRET_ACCESS_KEY'])
 S3_BUCKET_NAME = aws_bucket
 AWS_ACCESS_KEY_ID = aws_access_key
 AWS_SECRET_ACCESS_KEY = aws_secret_key
