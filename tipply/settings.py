@@ -121,7 +121,7 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
 
 
 
-S3_BUCKET_NAME = aws_bucket
+S3_BUCKET_NAME = s3_bucket_name
 AWS_ACCESS_KEY_ID = aws_access_key
 AWS_SECRET_ACCESS_KEY = aws_secret_key
 
