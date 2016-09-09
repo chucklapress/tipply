@@ -46,8 +46,4 @@ urlpatterns = [
     url(r'^api/employee_listings/$', EmployeeListingListAPIView.as_view(), name="employee_listing_list_api_view"),
     url(r'^api/employee_listings/(?P<pk>\d+)/$', EmployeeListingDetailAPIView.as_view(), name="employee_listing_detail_api_view")
 
-] 
-if not settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
+]
