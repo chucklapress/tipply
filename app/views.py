@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django import forms
 from geoposition.forms import GeopositionField
+from django.shortcuts import render_to_response, RequestContext
 
 # Create your views here.
 
@@ -66,7 +67,7 @@ class SignUpView(CreateView):
 
 class EmployeeListingCreateView(CreateView):
     model = EmployeeListing
-    fields = ['applicant_name','applicant_email','applicant_phone','position_applying_for','post_resume_or_cover']
+    fields = ['applicant_name','applicant_image','applicant_email','applicant_phone','position_applying_for','post_resume_or_cover']
     success_url = '/'
 
 

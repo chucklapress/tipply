@@ -13,6 +13,8 @@
 <p>Applicants Position applying for: {{ object.position_applying_for }}</p>
 <p>Date of application: {{ object.date_applying }}</p>
 <p>CV or Resume: {{ object.post_resume_or_cover }}</p>
+<p>Applicants Image: {{ object.applicant_image }}</p>
+<img src="{{ MEDIA_URL }}{{ object.applicant_image }}" alt="" />
 
 
 
