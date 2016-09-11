@@ -12,7 +12,7 @@ from geoposition.fields import GeopositionField
 
 class EmployeeListing(models.Model):
     applicant_name = models.CharField(max_length=50)
-    applicant_image = models.FileField(upload_to='/static/images', null=True, blank=True)
+    applicant_image = models.FileField(upload_to='static/images', null=True, blank=True)
     applicant_email = models.EmailField(max_length=30)
     applicant_phone = models.IntegerField()
     position_applying_for = models.CharField(max_length=80)
