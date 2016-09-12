@@ -69,6 +69,15 @@ class EmployeeListingCreateView(CreateView):
     model = EmployeeListing
     fields = ['applicant_name','applicant_image','applicant_email','applicant_phone','position_applying_for','post_resume_or_cover']
     success_url = '/'
+    def upload_pic(request):
+        if request.method == 'POST':
+            form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            m = EmployeeListing.objects.get(pk=id)
+            m.model_pic = form.cleaned_data['applicant_image']
+            m.save()
+            return HttpResponse('image upload success')
+            return HttpResponseForbidden('allowed only via POST')
 
 
 class ApplicantListView(ListView):
@@ -83,6 +92,7 @@ class EmployeeWorkSkillCreateView(CreateView):
     model = WorkSkill
     fields = ['employee_number','employee_name','appearence','customer_skills','team_work','adhere_company_policies','accepts_coaching','self_starting']
     success_url = '/'
+
 
 
 class EmployeeCreateView(CreateView):
