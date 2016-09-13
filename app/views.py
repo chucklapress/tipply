@@ -13,6 +13,8 @@ from django import forms
 from geoposition.forms import GeopositionField
 from django.shortcuts import render_to_response, RequestContext
 
+
+
 # Create your views here.
 
 
@@ -78,6 +80,7 @@ class EmployeeListingCreateView(CreateView):
             m.save()
             return HttpResponse('image upload success')
             return HttpResponseForbidden('allowed only via POST')
+
 
 
 class ApplicantListView(ListView):
