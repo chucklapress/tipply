@@ -66,7 +66,6 @@ class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = "/"
 
-
 class EmployeeListingCreateView(CreateView):
     model = EmployeeListing
     fields = ['applicant_name','applicant_image','applicant_email','applicant_phone','position_applying_for','post_resume_or_cover']

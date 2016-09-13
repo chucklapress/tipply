@@ -18,6 +18,11 @@ class EmployeeListing(models.Model):
     position_applying_for = models.CharField(max_length=80)
     date_applying = models.DateTimeField(auto_now_add=True)
     post_resume_or_cover = models.TextField(max_length=None)
+    @property
+    def image_url(self):
+       if self.image:
+           return self.image.url
+       return "https://cdn3.iconfinder.com/data/icons/smoothfill-action/30/action_088-no_camera-capture-picture-image-photo-128.png"
 
     def __str__(self):
         return self.applicant_name
