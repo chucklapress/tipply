@@ -174,8 +174,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
 }
-MEDIA_URL = '/media/'
+
 MEDIA_ROOT = BASE_DIR
+MEDIA_URL = '/media/'
 
 
 AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
