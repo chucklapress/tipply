@@ -12,7 +12,7 @@ from geoposition.fields import GeopositionField
 
 class EmployeeListing(models.Model):
     applicant_name = models.CharField(max_length=50)
-    applicant_image = models.ImageField(upload_to='uploads',null=True, blank=True)
+    applicant_image = models.ImageField(upload_to='uploads', blank=True, null=True)
     applicant_email = models.EmailField(max_length=30)
     applicant_phone = models.IntegerField()
     position_applying_for = models.CharField(max_length=80)
@@ -20,9 +20,10 @@ class EmployeeListing(models.Model):
     post_resume_or_cover = models.TextField(max_length=None)
     @property
     def image_url(self):
-       if self.image:
-           return self.image.url
-       return "https://cdn3.iconfinder.com/data/icons/smoothfill-action/30/action_088-no_camera-capture-picture-image-photo-128.png"
+        if self.image:
+            return self.image.url
+        else:
+            return "/uploads/default.png"
 
     def __str__(self):
         return self.applicant_name
