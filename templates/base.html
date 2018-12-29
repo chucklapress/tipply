@@ -46,6 +46,7 @@
   var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
   loader.load()
     .catch(function (error) { console.error(error); });
+    document.getElementById(iframeId).reload(true);
 </script>
 <script>
 window.onpageshow = function(event) {
