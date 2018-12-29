@@ -48,11 +48,11 @@
     .catch(function (error) { console.error(error); });
 </script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
-$(window).bind("pageshow", function(event) {
-    if (event.originalEvent.persisted) {
-        window.location.reload()
+window.onpageshow = function (event) {
+    if (event.persisted) {
+        window.location.reload();
     }
-});
+};
 </script>
 
 </html>
