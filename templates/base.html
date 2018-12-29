@@ -44,7 +44,6 @@
     baseUrl: 'https://lex-web-ui-codebuilddeploy-1ebodmfev-webappbucket-6q6z2jk3mty0.s3.amazonaws.com/'
   };
   var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
-  iframe.id = new Date().getTime();
   loader.load()
     .catch(function (error) { console.error(error); });
 </script>
