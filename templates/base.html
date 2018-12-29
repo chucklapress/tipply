@@ -48,13 +48,11 @@
     .catch(function (error) { console.error(error); });
 </script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
-if (!!window.performance && window.performance.navigation.type === 2) {
-            // value 2 means "The page was accessed by navigating into the history"
-            console.log('Reloading');
-            //window.location.reload(); // reload whole page
-            $('iframe').attr('src', function (i, val) { return val; }); // reload only iframes
-        }
-        
+$(function () {
+            //replace() does not keep the originating page in the session history,
+            document.location.replace("/Exercises#nocache"); // clear the last entry in the history and redirect to new url
+        });
+
 
 </script>
 
