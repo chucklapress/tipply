@@ -11,8 +11,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django import forms
 from geoposition.forms import GeopositionField
-#from django.shortcuts import render_to_response, RequestContext
-
+#from django.shortcuts import render_to_response, RequestContext  maybe need to just remove render_to_responese and import from django.template import RequestContext follow
+from django.template import RequestContext
 
 
 # Create your views here.
