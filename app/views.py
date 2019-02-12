@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django import forms
 from geoposition.forms import GeopositionField
-from django.shortcuts import render_to_response, RequestContext
+#from django.shortcuts import render_to_response, RequestContext
 
 
 
