@@ -39,7 +39,7 @@ class Employee(models.Model):
     employee_name = models.CharField(max_length=50)
     dob = models.DateField(max_length=8)
     address = models.TextField(max_length=None)
-    telephone_number = models.IntegerField(unique=True, validators=[RegexValidator(regex='^\d{10}$', message='Length has to be 10', code='Invalid number')])
+    telephone_number = models.CharField(unique=True, validators=[RegexValidator(regex='^\d{10}$', message='Length has to be 10', code='Invalid number')])
     federal_and_state_filling_status = models.CharField(max_length=30)
     department = models.CharField(max_length=50)
     start_date = models.DateField(max_length=8)
